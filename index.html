@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compactible">
+        <title>Fibbonacci Sequence</title>
+    </head>
+ <head>
+ <body>
+    <h1>Fibonacci Sequence</h1>
+
+    <input type="number" id="myNumber" value="0">
+    
+    <p>Enter a number to generate Fibonacci sequence.</p>
+    
+    <button onclick="myFunction()">Try it</button>
+    
+    
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+        var n = document.getElementById("myNumber").value;
+        document.getElementById("demo").innerHTML = fibonacciSequence(n);
+    }
+    
+    var sequence = [0]; // sequence = []; if you want sequence [1] = 1;
+    var previousNumber = 1;
+    var presentNumber = 0;
+    var sum = 0;
+     
+    function fibonacciSequence (n) {
+      
+        while (sequence.length < n) {
+         sum = previousNumber + presentNumber;
+         previousNumber = presentNumber;
+         presentNumber = sum;
+         sequence.push(sum);
+         
+        }
+        return (sequence);
+    }
+</script>
+
+ 
+   <style>
+
+  body {background-color:#66ff66}
+ </style>
+
+
+
+
+    </body>
+    </html>
